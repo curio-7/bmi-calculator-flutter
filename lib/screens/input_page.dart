@@ -9,13 +9,15 @@ import 'package:bmi_calculator/components/round_icon_button.dart';
 import 'package:bmi_calculator/calculator_brain.dart';
 
 enum GenderType {
-  Male,
-  Female,
+  male,
+  female,
 }
 
 class InputPage extends StatefulWidget {
+  const InputPage({Key? key}) : super(key: key);
+
   @override
-  _InputPageState createState() => _InputPageState();
+  State<InputPage> createState() => _InputPageState();
 }
 
 class _InputPageState extends State<InputPage> {
@@ -32,7 +34,7 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text('BMI CALCULATOR'),
         ),
       ),
@@ -46,13 +48,13 @@ class _InputPageState extends State<InputPage> {
                   child: ReusableCard(
                     onPress: () {
                       setState(() {
-                        selectedGender = GenderType.Male;
+                        selectedGender = GenderType.male;
                       });
                     },
-                    colour: selectedGender == GenderType.Male
+                    colour: selectedGender == GenderType.male
                         ? kActiveCardColor
                         : kCardColor,
-                    cardChild: CardContent(
+                    cardChild: const CardContent(
                       genderIcon: FontAwesomeIcons.mars,
                       label: 'MALE',
                     ),
@@ -62,14 +64,14 @@ class _InputPageState extends State<InputPage> {
                   child: ReusableCard(
                     onPress: () {
                       setState(() {
-                        selectedGender = GenderType.Female;
+                        selectedGender = GenderType.female;
                       });
                     },
-                    cardChild: CardContent(
+                    cardChild: const CardContent(
                       genderIcon: FontAwesomeIcons.venus,
                       label: 'FEMALE',
                     ),
-                    colour: selectedGender == GenderType.Female
+                    colour: selectedGender == GenderType.female
                         ? kActiveCardColor
                         : kCardColor,
                   ),
@@ -83,7 +85,7 @@ class _InputPageState extends State<InputPage> {
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text(
+                  const Text(
                     'HEIGHT',
                     style: kLabelTextStyle,
                   ),
@@ -96,7 +98,7 @@ class _InputPageState extends State<InputPage> {
                         height.toString(),
                         style: kNumbersTextStyle,
                       ),
-                      Text(
+                      const Text(
                         'cm',
                         style: kLabelTextStyle,
                       )
@@ -105,13 +107,13 @@ class _InputPageState extends State<InputPage> {
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
                       activeTrackColor: Colors.white,
-                      inactiveTrackColor: Color(0xFF8d8e98),
+                      inactiveTrackColor: const Color(0xFF8d8e98),
                       thumbColor: kBottonContainerColor,
-                      overlayColor: Color(0x291DB700),
+                      overlayColor: const Color(0x291DB700),
                       thumbShape:
-                          RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                          const RoundSliderThumbShape(enabledThumbRadius: 15.0),
                       overlayShape:
-                          RoundSliderOverlayShape(overlayRadius: 30.0),
+                          const RoundSliderOverlayShape(overlayRadius: 30.0),
                     ),
                     child: Slider(
                       value: height.toDouble(),
@@ -137,7 +139,7 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text(
+                        const Text(
                           'WEIGHT',
                           style: kLabelTextStyle,
                         ),
@@ -150,7 +152,7 @@ class _InputPageState extends State<InputPage> {
                               weight.toString(),
                               style: kNumbersTextStyle,
                             ),
-                            Text(
+                            const Text(
                               'kg',
                               style: kLabelTextStyle,
                             )
@@ -167,7 +169,7 @@ class _InputPageState extends State<InputPage> {
                                 });
                               },
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 15.0,
                             ),
                             RoundIconButton(
@@ -190,7 +192,7 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text(
+                        const Text(
                           'AGE',
                           style: kLabelTextStyle,
                         ),
@@ -203,7 +205,7 @@ class _InputPageState extends State<InputPage> {
                               age.toString(),
                               style: kNumbersTextStyle,
                             ),
-                            Text(
+                            const Text(
                               'years',
                               style: kLabelTextStyle,
                             )
@@ -220,7 +222,7 @@ class _InputPageState extends State<InputPage> {
                                 });
                               },
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 15.0,
                             ),
                             RoundIconButton(
