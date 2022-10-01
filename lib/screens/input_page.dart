@@ -46,22 +46,6 @@ class _InputPageState extends State<InputPage> {
                   child: ReusableCard(
                     onPress: () {
                       setState(() {
-                        selectedGender = GenderType.Male;
-                      });
-                    },
-                    colour: selectedGender == GenderType.Male
-                        ? kActiveCardColor
-                        : kCardColor,
-                    cardChild: CardContent(
-                      genderIcon: FontAwesomeIcons.mars,
-                      label: 'MALE',
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: ReusableCard(
-                    onPress: () {
-                      setState(() {
                         selectedGender = GenderType.Female;
                       });
                     },
@@ -72,6 +56,22 @@ class _InputPageState extends State<InputPage> {
                     colour: selectedGender == GenderType.Female
                         ? kActiveCardColor
                         : kCardColor,
+                  ),
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    onPress: () {
+                      setState(() {
+                        selectedGender = GenderType.Male;
+                      });
+                    },
+                    colour: selectedGender == GenderType.Male
+                        ? kActiveCardColor
+                        : kCardColor,
+                    cardChild: CardContent(
+                      genderIcon: FontAwesomeIcons.mars,
+                      label: 'MALE',
+                    ),
                   ),
                 ),
               ],
@@ -156,6 +156,9 @@ class _InputPageState extends State<InputPage> {
                             )
                           ],
                         ),
+                        SizedBox(
+                          height: 12.0,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
@@ -168,7 +171,7 @@ class _InputPageState extends State<InputPage> {
                               },
                             ),
                             SizedBox(
-                              width: 15.0,
+                              width: 16.0,
                             ),
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
@@ -208,6 +211,9 @@ class _InputPageState extends State<InputPage> {
                               style: kLabelTextStyle,
                             )
                           ],
+                        ),
+                        SizedBox(
+                          height: 12.0,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,

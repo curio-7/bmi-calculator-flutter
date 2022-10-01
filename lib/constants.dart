@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 const kLabelTextStyle = TextStyle(
-  fontSize: 18.0,
+  fontSize: 16.0,
+  fontWeight: FontWeight.w500,
   color: Color(0xFF8d8e98),
 );
 
@@ -11,7 +12,7 @@ const kActiveCardColor = Color.fromARGB(255, 19, 21, 63);
 const kBottonContainerColor = Color(0xFF1DB700);
 
 const kNumbersTextStyle = TextStyle(
-  fontSize: 50.0,
+  fontSize: 48.0,
   fontWeight: FontWeight.w900,
 );
 
