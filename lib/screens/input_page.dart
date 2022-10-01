@@ -9,8 +9,8 @@ import 'package:bmi_calculator/components/round_icon_button.dart';
 import 'package:bmi_calculator/calculator_brain.dart';
 
 enum GenderType {
-  male,
-  female,
+  Male,
+  Female,
 }
 
 class InputPage extends StatefulWidget {
@@ -48,32 +48,32 @@ class _InputPageState extends State<InputPage> {
                   child: ReusableCard(
                     onPress: () {
                       setState(() {
-                        selectedGender = GenderType.male;
-                      });
-                    },
-                    colour: selectedGender == GenderType.male
-                        ? kActiveCardColor
-                        : kCardColor,
-                    cardChild: const CardContent(
-                      genderIcon: FontAwesomeIcons.mars,
-                      label: 'MALE',
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: ReusableCard(
-                    onPress: () {
-                      setState(() {
-                        selectedGender = GenderType.female;
+                        selectedGender = GenderType.Female;
                       });
                     },
                     cardChild: const CardContent(
                       genderIcon: FontAwesomeIcons.venus,
                       label: 'FEMALE',
                     ),
-                    colour: selectedGender == GenderType.female
+                    colour: selectedGender == GenderType.Female
                         ? kActiveCardColor
                         : kCardColor,
+                  ),
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    onPress: () {
+                      setState(() {
+                        selectedGender = GenderType.Male;
+                      });
+                    },
+                    colour: selectedGender == GenderType.Male
+                        ? kActiveCardColor
+                        : kCardColor,
+                    cardChild: CardContent(
+                      genderIcon: FontAwesomeIcons.mars,
+                      label: 'MALE',
+                    ),
                   ),
                 ),
               ],
@@ -158,6 +158,9 @@ class _InputPageState extends State<InputPage> {
                             )
                           ],
                         ),
+                        SizedBox(
+                          height: 12.0,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
@@ -169,8 +172,8 @@ class _InputPageState extends State<InputPage> {
                                 });
                               },
                             ),
-                            const SizedBox(
-                              width: 15.0,
+                            SizedBox(
+                              width: 16.0,
                             ),
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
@@ -210,6 +213,9 @@ class _InputPageState extends State<InputPage> {
                               style: kLabelTextStyle,
                             )
                           ],
+                        ),
+                        SizedBox(
+                          height: 12.0,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
