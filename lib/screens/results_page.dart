@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:bmi_calculator/components/bottom_button.dart';
 
 class Results extends StatelessWidget {
-  Results(
-      {@required this.bmiResult,
-      @required this.resultText,
-      @required this.interpretation});
+  const Results({
+    @required this.bmiResult,
+    @required this.resultText,
+    @required this.interpretation,
+    Key? key,
+  }) : super(key: key);
 
   final String? bmiResult;
   final String? resultText;
@@ -17,7 +19,7 @@ class Results extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Result'),
+        title: const Text('Result'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -25,9 +27,9 @@ class Results extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Container(
-              padding: EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(15.0),
               alignment: Alignment.bottomLeft,
-              child: Text(
+              child: const Text(
                 'Your Result!',
                 style: kTitleTextStyle,
               ),

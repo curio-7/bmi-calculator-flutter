@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:bmi_calculator/constants.dart';
 
 class CardContent extends StatelessWidget {
-  CardContent({this.genderIcon, this.label});
-
   final IconData? genderIcon;
   final String? label;
+
+  const CardContent({Key? key, this.genderIcon, this.label}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class CardContent extends StatelessWidget {
           genderIcon,
           size: 80.0,
         ),
-        SizedBox(
+        const SizedBox(
           height: 15.0,
         ),
         Text(

@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:bmi_calculator/constants.dart';
 
 class BottomButton extends StatelessWidget {
-  BottomButton({@required this.buttonTitle, @required this.onTap});
+  const BottomButton({
+    @required this.buttonTitle,
+    @required this.onTap,
+    Key? key,
+  }) : super(key: key);
 
   final void Function()? onTap;
   final String? buttonTitle;
@@ -11,17 +15,17 @@ class BottomButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        color: kBottonContainerColor,
+        margin: const EdgeInsets.only(top: 15.0),
+        padding: const EdgeInsets.only(bottom: 20.0),
+        width: double.infinity,
+        height: kBottonContainerHeight,
         child: Center(
           child: Text(
             buttonTitle!,
             style: kLargeButtonTextStyle,
           ),
         ),
-        color: kBottonContainerColor,
-        margin: EdgeInsets.only(top: 15.0),
-        padding: EdgeInsets.only(bottom: 20.0),
-        width: double.infinity,
-        height: kBottonContainerHeight,
       ),
     );
   }
